@@ -14,9 +14,9 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
 <div class="container-fluid">
-	<a class="navbar-brand" href="#"><img src="img/logo.png">dfg</a>
+	<a class="navbar-brand" href="#"><img src="img/logo.png"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 	data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>
@@ -24,10 +24,10 @@
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="#">Home</a>
+				<a class="nav-link" href="#Home">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">About</a>
+				<a class="nav-link" href="#About">About</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Visualization</a>
@@ -36,7 +36,10 @@
 				<a class="nav-link" href="#">Comparisons</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Data</a>
+				<a class="nav-link" href="#Data">Data</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#Contacts">Contacts</a>
 			</li>
 </div>
 </nav>
@@ -48,16 +51,16 @@
 		<li data-target="#slides" data-slide-to"1"></li>
 		<li data-target="#slides" data-slide-to"2"></li>
 	</ul>
-	<div class="carousel-inner">
+	<div class="carousel-inner" id="Home">
 		<div class="carousel-item active">
 			<img src="img/background.png">
 			<div class="carousel-caption">
 				<h1 class="display-2">Web Design</h1>
 				<h3>Web Visualization Dashboard</h3>
 				<button type="button" class="btn btn-outline-light btn-lg">
-					VIEW DEMO</button>
+					<a href="#Start">VIEW DEMO</a></button>
 				<button type="button" class="btn btn-primary btn-lg">
-					Get Started</button>
+					<a href="#Start">Get Started</a></button>
 			</div>
 		</div>
 		<div class="carousel-item">
@@ -71,12 +74,12 @@
 <!--- Jumbotron -->
 <div class="container-fluid">
 <div class="row jumbotron">
-	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-		<p class ="lead">Text</p>
+	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10" id="About">
+		<p class ="lead">The project detailed description and the project code could be accessed at GitHub</p>
 	</div>
 	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-		<a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">
-			Web Hosting</button></a>
+		<a href="https://github.com/OlegRyzhkov2020/sqlalchemy-challenge.git"><button type="button" class="btn btn-outline-secondary btn-lg">
+			GitHub Repository</button></a>
 	</div>
 </div>
 </div>
@@ -95,7 +98,7 @@
 <!--- Three Column Section -->
 <div class="container-fluid padding">
 <div class="row text-center padding">
-	<div class="col-xs-12 col-sm-6 col-md-4">
+	<div class="col-xs-12 col-sm-6 col-md-4" id="Start">
 		<i class="fas fa-code"></i>
 		<h3>HTML5</h3>
 		<p>Built with the latest version of HTML, HTML5</p>
@@ -103,7 +106,7 @@
 	<div class="col-xs-12 col-sm-6 col-md-4">
 		<i class="fas fa-bold"></i>
 		<h3>BOOTSTRAP</h3>
-		<p>Built with the latest version of Bootstrap, Bootstrap 4</p>
+		<p>Built with the latest version of Bootstrap, Bootstrap 4.0</p>
 	</div>
 	<div class="col-sm-12 col-md-4">
 		<i class="fab fa-css3"></i>
@@ -116,7 +119,7 @@
 <!--- Two Column Section -->
 <div class="container-fluid padding">
 <div class="row padding">
-	<div class ="col-md-12 col-lg-6">
+	<div class ="col-md-12 col-lg-4">
 		<h2>Project Summary:</h2>
 		<p>The purpose of this project was to analyze how
 		wether changes as get closer to equator.</p>
@@ -128,7 +131,7 @@
 		<br>
 		<a href="#" class="btn btn-primary">Learn More</a>
 	</div>
-	<div class="col-lg-6">
+	<div class="col-lg-8">
 			<img src="img/Fig1.png" class="image-fluid">
 	</div>
 </div>
@@ -163,10 +166,49 @@
 </div>
 </div>
 </div>
+<!--- Two Column Data Section -->
+<div class="container-fluid padding" id="Data">
+<div class="row padding">
+	<div class ="col-lg-12">
+		<h2>DataSet:</h2>
+		<p>The following table includes data for 543 cities used for plotting during the project</p>
+		<br>
+	</div>
+	<div class="col-lg-12">
+		<div class="table-responsive" id="data_table">
+    	<table class="table table-sm table-dark" style="margin-bottom: 0">
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+				<script>
+					function arrayToTable(tableData) {
+							var table = $('<table></table>');
+							$(tableData).each(function (i, rowData) {
+									var row = $('<tr></tr>');
+									$(rowData).each(function (j, cellData) {
+											row.append($('<td>'+cellData+'</td>'));
+									});
+									table.append(row);
+							});
+							return table;
+					}
+
+					$.ajax({
+							type: "GET",
+							url: "file:///Users/olegryzhkov/Desktop/github/web-challenge/WebVisualizations/Resources/cities.csv",
+							success: function (data) {
+									$('#data_table').append(arrayToTable(Papa.parse(data).data));
+							}
+					});
+				</script>
+		</table>
+	</div>
+	</div>
+</div>
+</div>
 <!--- Meet the team -->
 <div class="container-fluid padding">
 <div class="row welcome text-center">
-	<div class="col-12">
+	<div class="col-12" id="Contacts">
 		<h1 class="display-4">Meet the Author</h1>
 	</div>
 	<hr>
@@ -188,28 +230,50 @@
 		</div>
 	</div>
 </div>
+<hr class="my-4">
 </div>
-<!--- Two Column Section -->
-<div class="container-fluid padding">
-<div class="row padding">
-	<div class ="col-lg-6">
-		<h2>If you build it..</h2>
-		<p>Built with the latest version of CSS, CSS3</p>
-
-		<br>
-		<a href="#" class="btn btn-primary">Learn More</a>
-	</div>
-	<div class="col-lg-6">
-			<img src="img/nunight.jpg" class="image-fluid">
-	</div>
-</div>
-</div>
-
 <!--- Connect -->
-
-
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h2>Connect</h2>
+	</div>
+	<div class="col-12 social padding">
+		<a href="https://www.facebook.com/oleg.ryzhkov.90"><i class="fab fa-facebook" style="font-size:48px;color:#3b5998"></i></a>
+		<a href="https://www.linkedin.com/in/oleg-n-ryzhkov/"><i class="fab fa-linkedin" style="font-size:48px;color:black"></i></a>
+		<a href="https://github.com/OlegRyzhkov2020"><i class="fab fa-github" style="font-size:48px;color:red"></i></a>
+	</div>
+</div>
+</div>
 <!--- Footer -->
-
+<footer>
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-md-4">
+		<img src="#">
+		<hr class="light">
+		<p> 555-555-555</p>
+	</div>
+	<div class="col-md-4">
+		<hr class="light">
+		<h5>My hours</h5>
+		<hr class="light">
+		<p>Monday: 9am-5am</p>
+		<p>Saturday: 10am-4pm</p>
+	</div>
+	<div class="col-md-4">
+		<hr class="light">
+		<h5>My hours</h5>
+		<hr class="light">
+		<p>City Stata zipcode</p>
+	</div>
+	<div class="col-12">
+		<hr class="light">
+		<h5>My hours</h5>
+		<hr class="light">
+		<p>&copy; Oleg Ryzhkov</p>
+	</div>
+<footer>
 
 
 
