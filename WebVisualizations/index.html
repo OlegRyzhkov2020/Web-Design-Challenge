@@ -16,7 +16,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
 <div class="container-fluid">
-	<a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+	<a class="navbar-brand" href="#"><img src="images/logo.png"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 	data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>
@@ -30,10 +30,10 @@
 				<a class="nav-link" href="#About">About</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Visualization</a>
+				<a class="nav-link" href="#Summary">Summary</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Comparisons</a>
+				<a class="nav-link" href="dashboard.html">Dashboard</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#Data">Data</a>
@@ -53,7 +53,7 @@
 	</ul>
 	<div class="carousel-inner" id="Home">
 		<div class="carousel-item active">
-			<img src="img/background.png">
+			<img src="images/lake.jpg">
 			<div class="carousel-caption">
 				<h1 class="display-2">Web Design</h1>
 				<h3>Web Visualization Dashboard</h3>
@@ -64,21 +64,21 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-				<img src="img/background2.png">
+				<img src="images/bird.jpg">
 		</div>
 		<div class="carousel-item">
-				<img src="img/background.png">
+				<img src="images/nwu.jpg">
 		</div>
 	</div>
 </div>
 <!--- Jumbotron -->
-<div class="container-fluid">
+<div class="container-fluid" id="About">
 <div class="row jumbotron">
-	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10" id="About">
+	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
 		<p class ="lead">The project detailed description and the project code could be accessed at GitHub</p>
 	</div>
 	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-		<a href="https://github.com/OlegRyzhkov2020/sqlalchemy-challenge.git"><button type="button" class="btn btn-outline-secondary btn-lg">
+		<a href="https://github.com/OlegRyzhkov2020/Web-Design-Challenge/tree/master/WebVisualizations"><button type="button" class="btn btn-outline-secondary btn-lg">
 			GitHub Repository</button></a>
 	</div>
 </div>
@@ -117,22 +117,32 @@
 <hr class="my-4">
 </div>
 <!--- Two Column Section -->
-<div class="container-fluid padding">
+<div class="container-fluid padding" id="Summary">
 <div class="row padding">
 	<div class ="col-md-12 col-lg-4">
 		<h2>Project Summary:</h2>
-		<p>The purpose of this project was to analyze how
-		wether changes as get closer to equator.</p>
-		<p>To accomplish this analysis we first pulled data
-		from the OpenWeatherMap API to assemble a daraset on
-		over 500 cities</p>
-		<p>Factors we looked at included: temperature, cloudness,
-		wind speed, and humidity</p>
 		<br>
-		<a href="#" class="btn btn-primary">Learn More</a>
+		<p>The purpose of this project was to analyze how
+		weather changes as get closer to equator.</p>
+		<p>To accomplish this analysis I first pulled data
+		from the OpenWeatherMap API to assemble a dataset on
+		over 500 cities.</p>
+		<p>After assembling the dataset, I used Matplotlib to plot
+		various aspects of the weather vs. latitude.</p>
+		<p>Factors I looked at included: temperature, cloudness,
+		wind speed, and humidity.</p>
+		<p>The side provides the source data and visualization
+		created as part of the analysis, as well as explanations and
+		descriptions of any trend and correlation witnessed</p>
+		<p> On the right side you can see a pairplot summary reflecting
+		relationships between different aspects of the weather with a
+		color differentiation for cities from Northern and Southern Hemispheres.<p>
+		<br>
+		<a href="https://github.com/OlegRyzhkov2020/API-challenge/tree/master/WeatherPy"
+				class="btn btn-primary">Learn More</a>
 	</div>
 	<div class="col-lg-8">
-			<img src="img/Fig1.png" class="image-fluid">
+			<img src="images/exploration.png" class="image-fluid">
 	</div>
 </div>
 </div>
@@ -152,16 +162,16 @@
 <div class="container-fluid padding">
 <div class="row text-center">
 	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="img/gif/nu.gif">
+		<img class="gif" src="images/gif/nu.gif">
 	</div>
 	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="img/gif/wildcat2.gif">
+		<img class="gif" src="images/gif/wildcat2.gif">
 	</div>
 	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="img/gif/wildcat3.gif">
+		<img class="gif" src="images/gif/wildcat3.gif">
 	</div>
 	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="img/gif/grad.gif">
+		<img class="gif" src="images/gif/grad.gif">
 	</div>
 </div>
 </div>
@@ -171,12 +181,25 @@
 <div class="row padding">
 	<div class ="col-lg-12">
 		<h2>DataSet:</h2>
-		<p>The following table includes data for 543 cities used for plotting during the project</p>
-		<br>
+		<p>The following table includes data for 579 cities used for plotting during the project</p>
 	</div>
 	<div class="col-lg-12">
 		<div class="table-responsive" id="data_table">
-    	<table class="table table-sm table-dark" style="margin-bottom: 0">
+    	<table class="table table-striped table-dark table-sm" style="margin-bottom: 0">
+				<thead>
+	            <th class="col-xs-1" >City</th>
+				      <th class="col-xs-2" >Country</th>
+				      <th class="col-xs-1" >Hemisphere</th>
+				      <th class="col-xs-2" >Date</th>
+							<th class="col-xs-1" >Lat</th>
+							<th class="col-xs-1" >Lng</th>
+							<th class="col-xs-1" >Max Temp</th>
+							<th class="col-xs-1" >Humidity</th>
+							<th class="col-xs-1" >Cloudiness</th>
+							<th class="col-xs-1" >Wind Speed</th>
+				  </tr>
+				</thead>
+
 				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
 				<script>
@@ -194,7 +217,7 @@
 
 					$.ajax({
 							type: "GET",
-							url: "file:///Users/olegryzhkov/Desktop/github/web-challenge/WebVisualizations/Resources/cities.csv",
+							url: "file:///Users/olegryzhkov/Desktop/github/web-challenge/WebVisualizations/resources/web_cities.csv",
 							success: function (data) {
 									$('#data_table').append(arrayToTable(Papa.parse(data).data));
 							}
@@ -219,13 +242,40 @@
 <div class="row padding">
 	<div class="col-md-4">
 		<div class="card">
-			<img class="card-img-top" src="img/oleg.jpg">
+			<img class="card-img-top" src="images/oleg.jpg">
 			<div class="card-body">
 				<h4 class="card-title">Oleg Ryzhkov</h4>
 				<p class="card-text">Oleg is a Business Analyst/Manager with in-depth experience in the energy sector,
 					knowledge of the CIS market, and newly equipped skills in programming and data analysis
 					from Northwestern University's Data Science and Visualization Boot Camp.</p>
 				<a href="#" class="btn btn-outline-secondary">See Profile</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card">
+			<img class="card-img-top" src="images/data.png">
+			<div class="card-body">
+				<h4 class="card-title">Data Science</h4>
+				<p class="card-text">The project is realized under the Data Science and Visualization
+				Program, which provides a 24-week intensive focused on gaining programming skills in Excel,
+				VBA, Python, R, JavaScript, SQL, MongoDB, Bootstrap, HTML, CSS, Tableau, Big Data, and
+				Machine Learning</p>
+				<a href="https://bootcamp.northwestern.edu/data/landing/?s=Google-Brand&msg_cv_scta=4&msg_cv_stbn=1&msg_cv_fcta=1&fqvar1=3&pkw=%2Bnorthwestern%20%2Bdata%20%2Bscience&pcrid=458307975831&pmt=b&utm_source=google&utm_medium=cpc&utm_campaign=GGL%7CNORTHWESTERN-UNIVERSITY%7CSEM%7CDATA%7C-%7COFL%7CTIER-1%7CALL%7CBRD%7CBMM%7CCore%7CGeneral&utm_term=%2Bnorthwestern%20%2Bdata%20%2Bscience&s=google&k=%2Bnorthwestern%20%2Bdata%20%2Bscience&utm_adgroupid=111164443630&utm_locationphysicalms=9021565&utm_matchtype=b&utm_network=g&utm_device=c&utm_content=458307975831&utm_placement=&gclid=Cj0KCQjw4f35BRDBARIsAPePBHy8UXrwtmGCPMWt8x8hPqmPbh2bASUfIboQJGnFrzW_4d1LM2cq40YaAmHWEALw_wcB&gclsrc=aw.ds"
+				class="btn btn-outline-secondary">Website</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card">
+			<img class="card-img-top" src="images/bootcamp.png">
+			<div class="card-body">
+				<h4 class="card-title">Northwestern University</h4>
+				<p class="card-text">Featured Programs: Coding, Data Science, Cybersecurity, FinTech.
+					All programs are offered through the Northwestern University School of Professional
+						Studies in collaboration with Trilogy Education Services.
+				<p>
+				<a href="https://bootcamp.northwestern.edu/" class="btn btn-outline-secondary">Website</a>
 			</div>
 		</div>
 	</div>
@@ -250,26 +300,28 @@
 <div class="container-fluid padding">
 <div class="row text-center padding">
 	<div class="col-md-4">
-		<img src="#">
+		<img src="images/white_logo.png">
 		<hr class="light">
-		<p> 555-555-555</p>
+		<p> Phone: 312-428-4888</p>
+		<p> Email: spsadmissions@northwestern.edu<p>
 	</div>
 	<div class="col-md-4">
 		<hr class="light">
-		<h5>My hours</h5>
+		<h5>Class Hours</h5>
 		<hr class="light">
-		<p>Monday: 9am-5am</p>
-		<p>Saturday: 10am-4pm</p>
+		<p>Tue, Thu: 6pm-10pm</p>
+		<p>Saturday: 10am-2pm</p>
 	</div>
 	<div class="col-md-4">
 		<hr class="light">
-		<h5>My hours</h5>
+		<h5>Teaching Team</h5>
 		<hr class="light">
-		<p>City Stata zipcode</p>
+		<p>Instructor: Will Wright</p>
+		<p>TA: Erin Wills, Jay Yu</p>
 	</div>
 	<div class="col-12">
 		<hr class="light">
-		<h5>My hours</h5>
+		<h5>“In God we trust, all others bring data.” — W Edwards Deming</h5>
 		<hr class="light">
 		<p>&copy; Oleg Ryzhkov</p>
 	</div>
