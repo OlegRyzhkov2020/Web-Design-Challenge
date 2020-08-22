@@ -11,6 +11,7 @@ img {
 }
 .navbar {
   padding: .8rem;
+  border-bottom: solid;
 }
 .navbar-brand img {
   height: 70px;
@@ -42,14 +43,32 @@ img {
   text-shadow: 1px 1px 1px 10px #000;
   padding-bottom: 1rem;
 }
+.button
+{
+    color: #000000;
+    border: 1px solid #00008B;
+}
+
+span.anchor {
+    margin-top: -100px; /* height of nav, in this case 54px */
+    display: block;
+    height: 100px; /* height of nav, in this case 54px */
+    visibility: hidden;
+    position: relative;
+}
+
+.carousel-caption a {
+  color: black;
+}
+
 .btn-primary {
-  background-color: #6648b1;
-  border: 1px solid #6648b1;
+  background-color: #FFFFFF;
+  border: 1px solid #00008B;
   color: #000000;
 }
 .btn-primary hover {
-  background-color: #563d7c;
-  border: 1px solid #563d7c;
+  background-color: #87CEFA;
+  border: 1px solid #000000;
   color: #FFFFFF;
 }
 .jumbotron {
@@ -222,23 +241,24 @@ tbody {
   overflow-y:auto;
   overflow-x: auto;
 }
+
 thead, tbody tr {
   display:table;
   width: var(--table-width);
   table-layout:fixed;
 }
-th, td {
-  border-bottom: 1px solid #ddd;
-}
+
 .table-responsive {
   max-height:400px;
   margin-bottom: 15px;
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   border: 1px solid #000000;
-}
+  display:inline-block;
+  }
+
 .box-content {overflow-x:auto;}
 
 /*---Firefox Bug Fix --*/

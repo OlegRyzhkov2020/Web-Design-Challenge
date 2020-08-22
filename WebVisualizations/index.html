@@ -41,17 +41,20 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#Contacts">Contacts</a>
 			</li>
+		</ul>
+	</div>
 </div>
 </nav>
 
 <!--- Image Slider -->
 <div id="slides" class="carousel slide" data-ride="carousel">
+	<span class="anchor" id="Home"></span>
 	<ul class="carousel-indicators">
 		<li data-target="#slides" data-slide-to"0" class="active"></li>
 		<li data-target="#slides" data-slide-to"1"></li>
 		<li data-target="#slides" data-slide-to"2"></li>
 	</ul>
-	<div class="carousel-inner" id="Home">
+	<div class="carousel-inner">
 		<div class="carousel-item active">
 			<img src="images/lake.jpg">
 			<div class="carousel-caption">
@@ -72,7 +75,8 @@
 	</div>
 </div>
 <!--- Jumbotron -->
-<div class="container-fluid" id="About">
+<div class="container-fluid">
+	<span class="anchor" id="About"></span>
 <div class="row jumbotron">
 	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
 		<p class ="lead">The project detailed description and the project code could be accessed at GitHub</p>
@@ -117,7 +121,8 @@
 <hr class="my-4">
 </div>
 <!--- Two Column Section -->
-<div class="container-fluid padding" id="Summary">
+<div class="container-fluid padding">
+	<span class="anchor" id="Summary"></span>
 <div class="row padding">
 	<div class ="col-md-12 col-lg-4">
 		<h2>Project Summary:</h2>
@@ -177,14 +182,15 @@
 </div>
 </div>
 <!--- Two Column Data Section -->
-<div class="container-fluid padding" id="Data">
+<div class="container-fluid padding">
+<span class="anchor" id="Data"></span>
 <div class="row padding">
 	<div class ="col-lg-12">
 		<h2>DataSet:</h2>
 		<p>The following table includes data for 579 cities used for plotting during the project</p>
 	</div>
 	<div class="col-lg-12">
-		<div class="table-responsive" id="data_table">
+  <div class="table-responsive" id="data_table">
     	<table class="table table-striped table-dark table-sm" style="margin-bottom: 0">
 				<thead>
 	            <th class="col-xs-1" >City</th>
@@ -197,32 +203,33 @@
 							<th class="col-xs-1" >Humidity</th>
 							<th class="col-xs-1" >Cloudiness</th>
 							<th class="col-xs-1" >Wind Speed</th>
-				  </tr>
+							<tr>
 				</thead>
 
-				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
-				<script>
-					function arrayToTable(tableData) {
-							var table = $('<table></table>');
-							$(tableData).each(function (i, rowData) {
-									var row = $('<tr></tr>');
-									$(rowData).each(function (j, cellData) {
-											row.append($('<td>'+cellData+'</td>'));
-									});
-									table.append(row);
-							});
-							return table;
-					}
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+			<script>
+				function arrayToTable(tableData) {
+						var table = $('<table></table>');
+						$(tableData).each(function (i, rowData) {
+								var row = $('<tr></tr>');
+								$(rowData).each(function (j, cellData) {
+										row.append($('<td>'+cellData+'</td>'));
+								});
+								table.append(row);
+						});
+						return table;
+				}
 
-					$.ajax({
-							type: "GET",
-							url: "file:///Users/olegryzhkov/Desktop/github/web-challenge/WebVisualizations/resources/web_cities.csv",
-							success: function (data) {
-									$('#data_table').append(arrayToTable(Papa.parse(data).data));
-							}
-					});
-				</script>
+				$.ajax({
+						type: "GET",
+						url: "file:///Users/olegryzhkov/Desktop/github/web-challenge/WebVisualizations/resources/web_cities.csv",
+						success: function (data) {
+								$('#data_table').append(arrayToTable(Papa.parse(data).data));
+						}
+				});
+			</script>
+
 		</table>
 	</div>
 	</div>
@@ -231,7 +238,8 @@
 <!--- Meet the team -->
 <div class="container-fluid padding">
 <div class="row welcome text-center">
-	<div class="col-12" id="Contacts">
+	<div class="col-12">
+		<span class="anchor" id="Contacts"></span>
 		<h1 class="display-4">Meet the Author</h1>
 	</div>
 	<hr>
@@ -302,8 +310,8 @@
 	<div class="col-md-4">
 		<img src="images/white_logo.png">
 		<hr class="light">
-		<p> Phone: 312-428-4888</p>
-		<p> Email: spsadmissions@northwestern.edu<p>
+		<p> Homework Assignment</p>
+		<p> Web Visualization Dashboard<p>
 	</div>
 	<div class="col-md-4">
 		<hr class="light">
@@ -323,7 +331,7 @@
 		<hr class="light">
 		<h5>“In God we trust, all others bring data.” — W Edwards Deming</h5>
 		<hr class="light">
-		<p>&copy; Oleg Ryzhkov</p>
+		<p>&copy; Oleg Ryzhkov 2020</p>
 	</div>
 <footer>
 
