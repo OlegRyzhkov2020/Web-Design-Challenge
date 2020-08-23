@@ -3,112 +3,210 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Complete Bootstrap 4 Website Layout</title>
+	<title>Dashboard Template</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="style.css" rel="stylesheet">
-  <link rel="stylesheet" href="./dashboard.css">
+	<link rel="stylesheet" href="./dashboard.css">
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-<div class="container-fluid">
-	<a class="navbar-brand" href="#"><img src="images/logo.png"></a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-	data-target="#navbarResponsive">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="index.html">Home</a>
-			</li>
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!--Left Side Bar-->
+	<div class="col-md-2 bg-light d-none d-md-block sidebar">
+		<div class="left-sidebar">
+			<div class="sidenav">
+				<a class="title"> Dashboard Page </a>
+				<a href="#summary">
+					<svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
+					Comparison
+				</a>
+				<button class="dropdown-btn">
+					<svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>Visualization<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-container">
+					<a href="#temp">Max Temp</a>
+					<a href="#hum">Humidity</a>
+					<a href="#cloud">Cloudiness</a>
+					<a href="#wind">Wind</a>
+				</div>
+				<button class="dropdown-btn">
+					<svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>Analysis
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-container">
+					<a href="#northern">Northern Hemisphere</a>
+					<a href="#southern">Southern Hemisphere</a>
+				</div>
+			</div>
+		</div>
 	</div>
-</nav>
+</div>
+</div>
+<!--Comparison-->
+<div class="container-fluid padding first-container">
+	<span class="anchor" id="summary"></span>
+	<div class="col-md-9 ml-sm-auto col-lg-10 px4">
+		<h3>Comparison</h3>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<img src="images/lat_temp.png">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<img src="images/lat_cld.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<img src="images/lat_wnd.png">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<img src="images/lat_hum.png">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Visualization-->
+<div class="container-fluid padding">
+	<span class="anchor" id="temp"></span>
+	<div class="col-md-9 ml-sm-auto col-lg-10 px4">
+		<h3>Max Temperature</h3>
+		<div class="card">
+			<div class="card-body">
+				<img src="images/lat_temp.png">
+				<p class="card-text">
+					As expected, the weather becomes significantly warmer as one approaches the equator
+					(o Deg. Latitude). More interestingly, however, is the fact that northern hemisphere
+					tends to be warmer this time of year than southern hemisphere. This may be due to
+					the tilt of the earth at the time of the year this data was gathered (August).
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid padding">
+	<span class="anchor" id="hum"></span>
+	<div class="col-md-9 ml-sm-auto col-lg-10 px4">
+		<h3>Humidity</h3>
+		<div class="card">
+			<div class="card-body">
+				<img src="images/lat_hum.png">
+				<p class="card-text">
+					According to the plot, there is a slight difference in humidity. The northern hemisphere
+					tends to be a bit more humid compared to the southern.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid padding">
+	<span class="anchor" id="cloud"></span>
+	<div class="col-md-9 ml-sm-auto col-lg-10 px4">
+		<h3>Cloudiness</h3>
+		<div class="card">
+			<div class="card-body">
+				<img src="images/lat_cld.png">
+				<p class="card-text">
+					The cloudiness does not show a noticible difference between cities in the northern and southern
+					hemisperes.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid padding">
+	<span class="anchor" id="wind"></span>
+	<div class="col-md-9 ml-sm-auto col-lg-10 px4">
+		<h3>Wind Speed</h3>
+		<div class="card">
+			<div class="card-body">
+				<img src="images/lat_wnd.png">
+				<p class="card-text">
+					The wind speed for most cities does not exceed 4 mph. We cannot observe a significant difference
+					between the northern and southern hemispheres during this period.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Regression Analysis -->
+<div class="container-fluid padding">
+	<span class="anchor" id="northern"></span>
+	<div class="col-md-9 ml-sm-auto col-lg-10 px4">
+		<h3>Regression Analysis (Northern Hemisphere)</h3>
+		<div class="card">
+			<div class="card-body">
+				<img src="images/northern_regression.png">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid padding">
+	<span class="anchor" id="southern"></span>
+	<div class="col-md-9 ml-sm-auto col-lg-10 px4">
+		<h3>Regression Analysis (Southern Hemisphere)</h3>
+		<div class="card">
+			<div class="card-body">
+				<img src="images/southern_regression.png">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Optional JavaScript -->
+<script>
+//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
 
-
-    <div class="container-fluid"
-      <div class= "row">
-          <!--Sidebar-->
-          <div class="col-md-2 bg-light d-none d-md-block sidebar">
-            <div class="left-sidebar">
-              <ul class="nav flex-column sidebar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                      Dashboard Page
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">
-                        <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
-                        Visualization
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">
-                        <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
-                        Comparisons
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#" >
-                        <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
-                        Data
-                      </a>
-                  </li>
-                </ul>
-            </div>
-          </div>
-          <!--Main-->
-          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px4">
-            <h3>Plots</h3>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <img src="images/lat_temp.png">
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <img src="images/lat_cld.png">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                      <img src="images/lat_wnd.png">
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                      <img src="images/lat_hum.png">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-      <div>
-    <div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
+for (i = 0; i < dropdown.length; i++) {
+	dropdown[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var dropdownContent = this.nextElementSibling;
+		if (dropdownContent.style.display === "block") {
+			dropdownContent.style.display = "none";
+		} else {
+			dropdownContent.style.display = "block";
+		}
+	});
+}
+</script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
 </html>
