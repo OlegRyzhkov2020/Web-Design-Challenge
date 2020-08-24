@@ -1,1 +1,1 @@
-# Web-Design-Challenge
+![presentation_slide](images/intro_page.png)
