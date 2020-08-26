@@ -140,8 +140,8 @@
 				<p>The purpose of this project was to analyze how weather changes as get closer to equator.</p>
 				<p>To accomplish this analysis I first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
 				<p>After assembling the dataset, I used Matplotlib to plot various aspects of the weather vs. latitude.</p>
-				<p>Factors I looked at included: temperature, cloudness, wind speed, and humidity.</p>
-				<p>The side provides the source data and visualization created as part of the analysis, as well as explanations and descriptions of any trend and correlation witnessed</p>
+				<p>Factors I looked at included: temperature, cloudiness, wind speed, and humidity.</p>
+				<p>The site provides the source data and visualization created as part of the analysis, as well as explanations and descriptions of any trend and correlation witnessed</p>
 				<p> On the right side you can see a pairplot summary reflecting relationships between different aspects of the weather with a color differentiation for cities from Northern and Southern Hemispheres.</p>
 				<br>
 				<a href="https://github.com/OlegRyzhkov2020/API-challenge/tree/master/WeatherPy"
@@ -224,7 +224,8 @@
 
 						$.ajax({
 							type: "GET",
-							url: "https://raw.githubusercontent.com/OlegRyzhkov2020/Web-Design-Challenge/master/resources/web_cities.csv",
+							//url: "https://raw.githubusercontent.com/OlegRyzhkov2020/Web-Design-Challenge/master/resources/web_cities.csv",
+							url: "https://olegryzhkov2020.github.io/Web-Design-Challenge/resources/web_cities.csv",
 							success: function (data) {
 								$('#data_table').append(arrayToTable(Papa.parse(data).data));
 							}
