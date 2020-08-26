@@ -224,7 +224,7 @@
 
 						$.ajax({
 							type: "GET",
-							url: "file:///Users/olegryzhkov/Desktop/github/web-challenge/WebVisualizations/resources/web_cities.csv",
+							url: "https://raw.githubusercontent.com/OlegRyzhkov2020/Web-Design-Challenge/master/resources/web_cities.csv",
 							success: function (data) {
 								$('#data_table').append(arrayToTable(Papa.parse(data).data));
 							}
